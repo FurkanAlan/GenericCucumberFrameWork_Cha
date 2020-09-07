@@ -1,3 +1,4 @@
+import PageFactory.PracticePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -6,13 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Sample1 {
+public class Sample2 {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://letskodeit.teachable.com/p/practice");
 
+        PracticePage practicePage = new PracticePage(driver);
+
+        
         WebElement webElement = driver.findElement(By.id("bmwradio"));
         webElement.click();
 
