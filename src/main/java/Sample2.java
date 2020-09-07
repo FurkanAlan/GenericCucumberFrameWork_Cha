@@ -16,33 +16,22 @@ public class Sample2 {
 
         PracticePage practicePage = new PracticePage(driver);
 
-        
-        WebElement webElement = driver.findElement(By.id("bmwradio"));
-        webElement.click();
+        practicePage.selectRaido();
+        practicePage.selectDropDown("honda");
+        practicePage.multiSelect("apple");
+        practicePage.multiSelect("peach");
+        practicePage.selectBenz();
+        practicePage.enterNm("alan");
+        practicePage.clickAlertAndGetAlertText();
 
-        WebElement drpDown = driver.findElement(By.id("carselect"));
-        Select sel = new Select(drpDown);
-        sel.selectByValue("honda");
 
-        WebElement multiSel = driver.findElement(By.id("multiple-select-example"));
-        Select sel2 = new Select(multiSel);
-        sel2.selectByValue("apple");
-        sel2.selectByValue("peach");
 
-        WebElement benzCheck = driver.findElement(By.id("benzcheck"));
-        benzCheck.click();
-
-        WebElement enterNm = driver.findElement(By.name("enter-name"));
-        enterNm.sendKeys("alan");
-
-        WebElement alertBtn = driver.findElement(By.id("alertbtn"));
-        alertBtn.click();
-
-        Alert alert = driver.switchTo().alert();
-        String alertText = alert.getText();
-        System.out.println(alertText);
-        alert.accept();
-        String actText = "Hello alan, share this practice page and share your knowledge";
+//
+//        Alert alert = driver.switchTo().alert();
+//        String alertText = alert.getText();
+//        System.out.println(alertText);
+//        alert.accept();
+//        String actText = "Hello alan, share this practice page and share your knowledge";
 
 //        if (alertText=){}
 
