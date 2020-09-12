@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class Sample2 {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
@@ -23,6 +25,10 @@ public class Sample2 {
         practicePage.selectBenz();
         practicePage.enterNm("alan");
         practicePage.clickAlertAndGetAlertText();
+        List <WebElement> wes = driver.findElements(By.xpath("//table[@id='product']/tbody/tr[1]/th"));
+        for(WebElement we : wes){
+
+        }
 
 
 
