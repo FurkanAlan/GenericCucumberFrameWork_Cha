@@ -43,7 +43,7 @@ public class Sample2 {
 
         try {
             Thread.sleep(3000);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e) {  
             e.printStackTrace();
         }
 
