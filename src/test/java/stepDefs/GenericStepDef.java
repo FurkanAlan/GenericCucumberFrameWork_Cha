@@ -1,5 +1,6 @@
 package stepDefs;
 
+import PageFactory.HomePage;
 import PageFactory.PracticePage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -14,12 +15,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class GenericStepDef {
     WebDriver driver;
     PracticePage practicePage;
+    HomePage homePage;
 
     @Before
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         practicePage = new PracticePage(driver);
+        homePage =new HomePage(driver);
 
     }
 
@@ -34,7 +37,7 @@ public class GenericStepDef {
 
     //^$ start and end step
     //"([^"]*)"  string icin kullanilan ifade
-    @Given("^I navigate to \"([^\"]*)\" url$")
+        @Given("^I navigate to \"([^\"]*)\" url$")
     public void i_navigate_to_url(String string) {
         driver.get(string);
         System.out.println("The window title: " + driver.getTitle());
@@ -55,6 +58,18 @@ public class GenericStepDef {
     public void i_select_Honda_from_dropdown(String carType) {
         practicePage.selectDropDown(carType);
     }
+
+
+    @Then("^I validate enrollNow is displayed$")
+    public void i_validate_enroll(){
+        homePage.isEnrollNowDisplayed();
+    }
+    @And("^I valide homepage source is \"([^\"]*)\"$")
+    public void i_validate(String expSrc){
+        homePage.validateHomeScr(expSrc);
+    }
+
+
 
     @After
     public void tearDown() {
