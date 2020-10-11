@@ -12,18 +12,11 @@ public class Hooks {
     WebDriver driver;
 
 
-
     @Before
     public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        HomePageStepDefs homePageStepDefs = new HomePageStepDefs(driver);
-        CommonStepDefs commonStepDefs = new CommonStepDefs(driver);
-        PracticePageStepDefs practicePageStepDefs = new PracticePageStepDefs(driver);
+
 
     }
-
-
 
 
     @After

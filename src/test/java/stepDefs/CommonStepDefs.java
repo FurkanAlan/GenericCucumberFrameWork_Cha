@@ -2,18 +2,13 @@ package stepDefs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import managers.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class CommonStepDefs {
 
 
-    WebDriver driver;
-
-    //constructor
-    public CommonStepDefs(WebDriver driver) {
-        this.driver = driver;
-    }
 
     @Given("^I wait (\\w+) milliseconds$")
     public void i_wait_for(long waitTime) {
@@ -29,8 +24,8 @@ public class CommonStepDefs {
     //"([^"]*)"  string icin kullanilan ifade
     @Given("^I navigate to \"([^\"]*)\" url$")
     public void i_navigate_to_url(String string) {
-        driver.get(string);
-        System.out.println("The window title: " + driver.getTitle());
+        Driver.getDriver().get(string);
+        System.out.println("The window title: " + Driver.getDriver().getTitle());
     }
 
 
